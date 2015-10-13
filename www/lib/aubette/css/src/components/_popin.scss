@@ -1,0 +1,35 @@
+.popin {
+  box-sizing: border-box;
+  position: fixed; right: 10px; left: 10px;
+  border-radius: 2px; padding-bottom: 90px; height: 480px; max-height: 95%;
+  background-color: rgba($white, 1); cursor: pointer;
+  transition: bottom .3s ease-in;
+  z-index: 10;
+  color: $black;
+
+  box-shadow: 0 0 10px rgba($black, .5);
+
+
+  .popin-content {
+    position: absolute; top: 0; right: 0; bottom: 0; left: 0; padding: 20px;
+    background-color: rgba($white, 0); cursor: default;
+
+    @media screen and #{$media-landscape} {
+      padding: 10px;
+      .device-standalone & { padding-left: 20px; }
+    }
+
+    @media screen and #{$media-squeezed} {
+      padding: 5px;
+    }
+
+    *:first-child { margin-top: 0; }
+    *:last-child { margin-bottom: 0; }
+  }
+  .icon-fermeture { position: absolute; top: 5px; right: 10px; font-size: 20px; line-height: 1; font-weight: $fw-light; color: $black; }
+
+  iframe { width: 100% !important; height: 100% !important; }
+}
+
+.popin-isopen { bottom: 0; }
+.popin-isclose { bottom: -500px; }
